@@ -1,0 +1,32 @@
+#Extracting Text from PDFs.
+import PyPDF2
+pdfFileObj = open("C:\\Users\\ayush\\Downloads\\_Python_Crash_Course_A_Hands download.pdf", 'rb')
+pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+print(pdfReader.numPages)
+pageObj = pdfReader.getPage(40)
+print(pageObj.extractText())
+pdfFileObj.close()
+#Decrypting PDFs.
+import PyPDF2
+pdfReader = PyPDF2.PdfFileReader(open("C:\\Users\\ayush\\Downloads\\meetingminutes-protected.pdf", 'rb'))
+print(pdfReader.isEncrypted)
+
+#Reading word Document.
+import docx
+doc = docx.Document("C:\\Users\\ayush\\OneDrive\\Documents\\demo.docx") 
+print(len(doc.paragraphs))
+
+
+
+
+import readDocx
+print(readDocx.getText("C:\\Users\\ayush\\Downloads\\demo.docx"))
+
+
+import docx
+doc = docx.Document()
+print(doc.add_paragraph('Hello, world!'))
+print(doc.save('helloworld.docx'))
+
+
+
