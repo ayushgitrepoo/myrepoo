@@ -14,13 +14,7 @@ print(pdfReader.isEncrypted)
 #Reading word Document.
 import docx
 doc = docx.Document("C:\\Users\\ayush\\OneDrive\\Documents\\demo.docx") 
-print(len(doc.paragraphs))
-
-
-
-
-import readDocx
-print(readDocx.getText("C:\\Users\\ayush\\Downloads\\demo.docx"))
+print(len(doc.paragraphs)
 
 
 import docx
