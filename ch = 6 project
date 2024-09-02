@@ -1,0 +1,24 @@
+def printTable(tableData):
+    # Determine the number of columns (which is the same as the number of inner lists)
+    num_columns = len(tableData)
+    
+    # Initialize the list to store the maximum width of each column
+    colWidths = [0] * num_columns
+    
+    # Compute the maximum width for each column
+    for i in range(num_columns):
+        for item in tableData[i]:
+            colWidths[i] = max(colWidths[i], len(item))
+    
+    # Print the table with right-justified columns
+    for row in range(len(tableData[0])):
+        rowStrings = []
+        for col in range(num_columns):
+            rowStrings.append(tableData[col][row].rjust(colWidths[col]))
+        print(" ".join(rowStrings))
+
+# Example usage
+tableData = [['apples', 'oranges', 'cherries', 'banana'],
+             ['Alice', 'Bob', 'Carol', 'David'],
+             ['dogs', 'cats', 'moose', 'goose']]
+printTable(tableData)
