@@ -1,0 +1,44 @@
+#reader Objects.
+import csv
+exampleFile = open("C:\\Users\\ayush\\Downloads\\example.csv")
+exampleReader = csv.reader(exampleFile)
+exampleData = list(exampleReader)
+print(exampleData)
+print(exampleData[0][0])
+#Reading Data from reader Objects in a for Loop.
+import csv
+exampleFile = open("C:\\Users\\ayush\\Downloads\\example.csv")
+exampleReader = csv.reader(exampleFile)
+for row in exampleReader:
+    print('Row#' + str(exampleReader.line_num) + ' ' + str(row))
+    
+#Writer Objects.
+import csv
+outputFile = open('output.csv', 'w', newline='')
+outputWriter = csv.writer(outputFile)   
+print(outputWriter.writerow(['spam', 'eggs', 'bacon', 'ham', 'ayush']))
+print(outputWriter.writerow(['Hello, world!', 'eggs', 'bacon', 'ham']))
+print( outputWriter.writerow([1, 2, 3.141592, 4]))
+outputFile.close()
+
+#Dicreader and Dictwriter CSV Objects.
+import csv
+exampleFile = open("C:\\Users\\ayush\\Downloads\\example.csv.csv")
+exampleDictReader = csv.DictReader(exampleFile, ['time', 'name',
+'amount'])
+for row in exampleDictReader:
+    print(row['time'], row['name'], row['amount'])
+
+#Reading Json with the load() functions. 
+stringOfJsonData = '{"name": "Zophie", "isCat": true, "miceCaught": 0,"felineIQ": null}'
+import json
+jsonDataAsPythonValue = json.loads(stringOfJsonData)
+print(jsonDataAsPythonValue)  
+
+#Writing JSON with the dumps() Function.
+pythonValue = {'isCat': True, 'miceCaught': 0, 'name': 'Zophie','felineIQ': None}
+import json
+stringOfJsonData = json.dumps(pythonValue)
+print(stringOfJsonData)
+
+
